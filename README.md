@@ -1,30 +1,70 @@
-# Binlee Medical-Aesthetics Skills
+# Binlee Skills · 医美信任闭环
 
-一套以医美机构、医生、监管研究者与普通消费者为共同受众的 Codex skill 包。它把经营判断、合规边界、消费者决策与公共传播放在同一套“信任闭环”中处理。
+一套面向医美机构经营者、医生、监管研究者与普通消费者的 Agent Skills。它把行业判断、机构运营、医生 IP、合规风险、消费者决策和公共传播放进同一个可追溯的知识系统。
 
-## Skills
+这不是“让 AI 多背一点医美术语”。它的重点是：让 AI 在面对医美问题时，知道该查什么、如何区分文章观点与当前事实、如何把不确定性讲清楚，以及什么时候不应该给出个体化结论。
 
-- `binlee-med-aesthetics-strategy`：行业周期、定位、竞争与经营决策。
-- `binlee-clinic-operations`：组织、渠道、医生协作与运营系统。
-- `binlee-doctor-ip`：医生创业、专业表达与个人品牌。
-- `binlee-compliance-risk`：经营、宣传、医疗与消费者保护风险。
-- `binlee-consumer-decision`：普通消费者的信息辨别、面诊准备与风险识别。
-- `binlee-public-communication`：面向公众的医美内容创建与可信度审查。
-- `binlee-source-library`：本地语料的检索、引用与刷新。
+## 快速开始
 
-## Local corpus
+仓库中的 `skills/` 是唯一真源。使用安装器把同一套 skill 放进你正在使用的 CLI 的标准发现目录：
 
-`binlee-source-library` 保存从 [drli.beaucare.org](https://drli.beaucare.org) 提取的 582 篇文章全文、摘要、FAQ、日期和原文链接。文章日期覆盖 2018-08-29 至 2026-07-07。
+```bash
+# Codex CLI
+node scripts/install-binlee.mjs --cli codex --scope user
 
-语料是可追溯的作者观点库，不是现行临床、法律或市场事实的替代品。各 skill 都要求把文章观点、跨文归纳与需要实时核验的事实明确区分。
+# Claude Code
+node scripts/install-binlee.mjs --cli claude --scope user
 
-## Install
+# Gemini CLI
+node scripts/install-binlee.mjs --cli gemini --scope user
 
-将 `skills/` 下的每个 `binlee-*` 文件夹复制到 Codex 的 skills 目录（通常为 `%USERPROFILE%\.codex\skills`）。各 skill 必须保持为同级目录，以便共享本地语料库。
+# OpenCode
+node scripts/install-binlee.mjs --cli opencode --scope user
+```
 
-## Refresh the corpus
+只安装一个 skill：
 
-在 Git Bash 中运行：
+```bash
+node scripts/install-binlee.mjs --cli claude --scope project --skill binlee-consumer-decision
+```
+
+安装器默认覆盖同名目标目录中的旧副本；它不会改动源仓库，也不会写入任何 API key 或账号凭据。完整说明见 [使用手册](docs/USER_GUIDE.md) 和 [CLI 兼容性说明](docs/CLI_COMPATIBILITY.md)。
+
+## 六个应用 skill + 一个语料库 skill
+
+| Skill | 解决的问题 |
+| --- | --- |
+| `binlee-med-aesthetics-strategy` | 周期、定位、竞争与经营决策 |
+| `binlee-clinic-operations` | 组织、渠道、医生协作与运营系统 |
+| `binlee-doctor-ip` | 医生创业、专业表达与个人品牌 |
+| `binlee-compliance-risk` | 宣传、医疗边界与消费者保护风险 |
+| `binlee-consumer-decision` | 普通消费者的信息辨别、面诊准备与风险识别 |
+| `binlee-public-communication` | 面向公众的医美内容与信任审查 |
+| `binlee-source-library` | 检索、引用和刷新本地文章语料 |
+
+## 语料库
+
+`binlee-source-library` 保存从 [drli.beaucare.org](https://drli.beaucare.org) 提取的 582 篇文章全文、摘要、FAQ、日期和原文链接。语料是可追溯的作者观点库，不是现行临床、法律或市场事实的替代品。
+
+每个 skill 都要求区分：**文章中的观点**、**跨文归纳**、**需另行核验的当前事实**。消费者 skill 不做诊断、不替个人选择项目或医生；公共传播 skill 会检查焦虑营销、隐性推广、虚假确定性和利益冲突。
+
+## 仓库结构
+
+```text
+skills/       canonical skill source
+adapters/     每个 CLI 的发现目录与安装说明
+docs/         使用、兼容性和维护手册
+copy/         项目介绍、CLI 上架文案和推广素材
+scripts/      跨 CLI 安装器
+```
+
+## 适用对象
+
+机构老板可以用它做经营判断，医生可以用它建设专业 IP，监管研究者可以用它梳理行业叙事与风险，消费者可以用它准备面诊并识别信息差。四类人看到的是不同入口，但共享同一套证据与传播边界。
+
+## 贡献与更新
+
+先读 [贡献与维护说明](docs/CONTRIBUTING.md)。语料刷新使用：
 
 ```bash
 bash skills/binlee-source-library/scripts/refresh-corpus.sh
