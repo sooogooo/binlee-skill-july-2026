@@ -14,7 +14,25 @@
 
 ## 推荐安装
 
-使用仓库自带安装器，它只负责把 canonical `skills/` 复制到目标发现目录：
+### 标准 skills CLI
+
+本仓库支持 Vercel `skills` CLI 的标准 GitHub 安装方式：
+
+```bash
+npx skills add sooogooo/binlee-skill-july-2026
+```
+
+该命令会扫描仓库根目录的 `skills/`，当前版本可发现 7 个 Binlee skill。常用选项：
+
+```bash
+npx skills add sooogooo/binlee-skill-july-2026 --list
+npx skills add sooogooo/binlee-skill-july-2026 --skill binlee-consumer-decision
+npx skills add sooogooo/binlee-skill-july-2026 --global --yes
+```
+
+### 仓库自带安装器
+
+当需要明确指定目标 CLI 和用户级/项目级范围时，使用仓库自带安装器。它只负责把 canonical `skills/` 复制到目标发现目录：
 
 ```bash
 node scripts/install-binlee.mjs --cli codex --scope user

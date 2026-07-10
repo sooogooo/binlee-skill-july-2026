@@ -14,6 +14,37 @@ Binlee 不是一个聊天机器人，也不是一套把文章自动改写成答�
 
 ## 2. 安装
 
+### 2.1 一条命令安装（推荐）
+
+直接从公开 GitHub 仓库安装：
+
+```bash
+npx skills add sooogooo/binlee-skill-july-2026
+```
+
+安装前查看仓库暴露的技能：
+
+```bash
+npx skills add sooogooo/binlee-skill-july-2026 --list
+```
+
+常用变体：
+
+```bash
+# 只安装消费者决策 skill
+npx skills add sooogooo/binlee-skill-july-2026 --skill binlee-consumer-decision
+
+# 安装全部 skill，并跳过确认
+npx skills add sooogooo/binlee-skill-july-2026 --all --yes
+
+# 安装到用户级目录，而不是当前项目
+npx skills add sooogooo/binlee-skill-july-2026 --global --yes
+```
+
+`npx skills add` 会从仓库根目录的 `skills/` 发现技能，并按 CLI 选择的目标写入发现目录。默认行为由 `skills` CLI 当前版本决定；如果要精确控制 Codex、Claude Code、Gemini CLI 或 OpenCode 的用户级/项目级路径，可使用下面的仓库安装器。
+
+### 2.2 精确指定 CLI 和安装范围
+
 先把仓库克隆到本地：
 
 ```bash

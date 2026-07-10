@@ -6,7 +6,32 @@
 
 ## 快速开始
 
-仓库中的 `skills/` 是唯一真源。使用安装器把同一套 skill 放进你正在使用的 CLI 的标准发现目录：
+### 推荐：用 skills CLI 安装
+
+仓库中的 `skills/` 是唯一真源，已按 Agent Skills 的标准目录组织。直接运行下面的命令即可从 GitHub 安装整套技能：
+
+```bash
+npx skills add sooogooo/binlee-skill-july-2026
+```
+
+先查看可安装的技能，不写入本地目录：
+
+```bash
+npx skills add sooogooo/binlee-skill-july-2026 --list
+```
+
+只安装一个技能，或跳过确认提示：
+
+```bash
+npx skills add sooogooo/binlee-skill-july-2026 --skill binlee-consumer-decision
+npx skills add sooogooo/binlee-skill-july-2026 --all --yes
+```
+
+需要安装到用户级目录时加 `--global`；不加时由 `skills` CLI 按当前项目环境选择项目级安装。`npx skills` 会按目标 CLI 的发现规则写入对应目录。
+
+### 进阶：使用仓库自带安装器
+
+当你需要明确指定 Codex、Claude Code、Gemini CLI 或 OpenCode，以及用户级/项目级路径时，使用安装器：
 
 ```bash
 # Codex CLI
