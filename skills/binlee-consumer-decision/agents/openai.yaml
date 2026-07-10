@@ -1,0 +1,4 @@
+interface:
+  display_name: "Binlee 消费者决策"
+  short_description: "Support safer, informed medical-aesthetics decisions"
+  default_prompt: "Use $binlee-consumer-decision to make a safer, better-informed medical-aesthetics decision."

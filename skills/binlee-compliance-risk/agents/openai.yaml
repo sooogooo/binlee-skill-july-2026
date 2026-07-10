@@ -1,0 +1,4 @@
+interface:
+  display_name: "Binlee ∫œπÊ∑Áœ’"
+  short_description: "Assess medical-aesthetics compliance and trust risk"
+  default_prompt: "Use $binlee-compliance-risk to assess a medical-aesthetics compliance or risk scenario."

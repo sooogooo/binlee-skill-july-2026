@@ -1,0 +1,4 @@
+interface:
+  display_name: "Binlee ¹«¹²´«²¥"
+  short_description: "Create trustworthy public medical-aesthetics communication"
+  default_prompt: "Use $binlee-public-communication to create or audit responsible public medical-aesthetics communication."

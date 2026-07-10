@@ -1,0 +1,4 @@
+interface:
+  display_name: "Binlee 机构运营"
+  short_description: "Diagnose clinic systems, delivery, growth, and governance"
+  default_prompt: "Use $binlee-clinic-operations to diagnose a medical-aesthetics clinic operating issue."
