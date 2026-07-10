@@ -1,21 +1,20 @@
 ---
 name: binlee-compliance-risk
-description: Assess medical-aesthetics compliance and trust risks around advertising, institutional boundaries, records, clinical claims, consumer protection, and online communication using the local Binlee corpus. Use for risk triage, policy research, and internal review; verify current law and regulation from primary authorities.
+description: 使用本地 Binlee 医美语料，评估广告宣传、机构边界、记录留存、临床表述、消费者保护和线上沟通中的合规与信任风险。适用于风险分级、政策研究和内部审查；当前法律法规必须另查权威原始来源。
 ---
 
-# Binlee Compliance Risk
+# Binlee 合规风险
 
-Treat compliance as a design constraint and evidence trail, not a wording cleanup pass.
+把合规当作设计约束和证据链，而不是发布前才做的文案清洗。
 
-## Workflow
+## 工作流
 
-1. Read `../binlee-source-library/references/evidence-policy.md`.
-2. Define the conduct, audience, channel, jurisdiction, clinical context, and retained evidence.
-3. Search the corpus for analogous boundary and governance arguments.
-4. Distinguish source commentary from current binding requirements; verify laws, regulations, standards, and regulator notices using authoritative current sources.
-5. Produce a risk map: issue, affected party, evidence, confidence, severity, reversible control, escalation owner, and remaining uncertainty.
+1. 读取 `../binlee-source-library/references/evidence-policy.md`。
+2. 明确行为、受众、渠道、司法辖区、临床场景和需要留存的证据。
+3. 搜索语料中的相似边界问题与治理论证。
+4. 区分文章评论和当前具有约束力的要求；使用当下权威来源核验法律、法规、标准和监管通知。
+5. 输出风险地图：问题、受影响方、证据、置信度、严重程度、可逆控制措施、升级负责人和剩余不确定性。
 
-## Guardrails
+## 约束
 
-Do not provide legal conclusions without current jurisdiction-specific authority. Do not replace clinical judgment with a communications review. Escalate potential patient-harm, unlicensed-practice, falsified-record, or deceptive-claim concerns to qualified local professionals.
-
+没有当前且适用辖区的法源时，不要给出法律结论。沟通审查不能替代临床判断。遇到可能伤害患者、无资质执业、篡改记录或欺骗性宣传的问题，应升级给当地合格专业人士处理。

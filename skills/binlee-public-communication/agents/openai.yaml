@@ -1,4 +1,4 @@
 interface:
-  display_name: "Binlee ��������"
-  short_description: "Create trustworthy public medical-aesthetics communication"
-  default_prompt: "Use $binlee-public-communication to create or audit responsible public medical-aesthetics communication."
+  display_name: "Binlee 公共传播"
+  short_description: "创建可信、负责的医美公共沟通"
+  default_prompt: "使用 $binlee-public-communication 创建或审查负责任的医美公共沟通内容。"

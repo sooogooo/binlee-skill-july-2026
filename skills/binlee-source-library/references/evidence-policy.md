@@ -1,22 +1,21 @@
-# Evidence and safety policy
+# 证据与安全政策
 
-## Evidence levels
+## 证据层级
 
-| Label | Meaning | Handling |
+| 标签 | 含义 | 使用方式 |
 | --- | --- | --- |
-| 文章中的观点 | A claim, interpretation, or recommendation made in a named corpus article | Attribute it to the article and retain its date. |
-| 跨文归纳 | A pattern inferred from multiple corpus articles | Name the supporting articles and explain the synthesis. |
-| 需另行核验的当前事实 | Current law, regulation, price, market data, clinical evidence, product status, or named-party fact | Verify against contemporary primary or authoritative sources before relying on it. |
+| 文章中的观点 | 某篇具名语料文章提出的主张、解释或建议 | 归因给文章，并保留发布日期。 |
+| 跨文归纳 | 从多篇语料文章中归纳出的模式 | 列出支持归纳的文章，并说明综合过程。 |
+| 需另行核验的当前事实 | 当前法律、法规、价格、市场数据、临床证据、产品状态或具名主体事实 | 使用当下的原始或权威来源核验后再依赖。 |
 
-## Time and authority
+## 时间与权威性
 
-The corpus preserves an author's writing, not a living rulebook. Treat time-sensitive statements as historical at publication unless independently verified. Do not present an article's clinical, legal, or commercial claim as authoritative solely because it appears in the corpus.
+语料保存的是作者当时的写作，不是一套实时更新的规则手册。除非独立核验，否则把时效性陈述视为文章发布时的历史内容。不能仅因为一条临床、法律或商业主张出现在语料里，就把它当成权威结论。
 
-## Consumer and communication standard
+## 消费者与传播标准
 
-Do not manufacture urgency, shame, or appearance anxiety. State uncertainty, conflicts of interest, and non-personalized limits plainly. Never make a specific procedure, provider, or product recommendation for an individual from text alone.
+不要制造紧迫感、羞耻感或外貌焦虑。清楚说明不确定性、利益冲突和非个体化的限制。不能仅凭文字为某个具体个人推荐项目、医生、机构或产品。
 
-## Citation form
+## 引用格式
 
-Use: `《文章标题》 (YYYY-MM-DD, 李滨医美之滨, 原文链接)`. Quote sparingly; prefer an accurate paraphrase and say whether it is the author's view or your synthesis.
-
+使用：`《文章标题》（YYYY-MM-DD，李滨医美之滨，原文链接）`。少量引用，优先准确转述，并说明这是作者观点还是你的综合判断。

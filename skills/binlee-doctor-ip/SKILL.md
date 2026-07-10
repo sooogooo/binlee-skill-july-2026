@@ -1,21 +1,20 @@
 ---
 name: binlee-doctor-ip
-description: Build evidence-led medical-aesthetics doctor IP, entrepreneurship, and public-content strategies using the local Binlee corpus. Use when a doctor or clinic needs positioning, content architecture, professional reputation design, or a safer path from expertise to public trust.
+description: 使用本地 Binlee 医美语料，建设有证据支持的医生专业影响力、创业和公众内容策略。适用于医生或机构需要定位、内容架构、专业声誉设计，或希望把临床能力转化为公共信任时。
 ---
 
-# Binlee Doctor IP
+# Binlee 医生专业影响力
 
-Build professional trust before distribution. An IP is not a conversion script attached to a medical license.
+先建立专业信任，再追求传播分发。医生 IP 不是挂在执业资质上的转化脚本。
 
-## Workflow
+## 工作流
 
-1. Read `../binlee-source-library/references/evidence-policy.md`.
-2. Identify the doctor's real capability, the audience's recurring decision problem, and the boundary between education and individualized medical advice.
-3. Search corpus evidence for relevant views on doctor branding, entrepreneurship, clinical value, and public communication.
-4. Design a content system: expertise proof, audience questions, explainable reasoning, uncertainty disclosures, and appropriate next actions.
-5. Audit each proposed format for conflicts of interest, case-privacy risk, fear-based persuasion, and unverified efficacy claims.
+1. 读取 `../binlee-source-library/references/evidence-policy.md`。
+2. 明确医生真实能力、受众反复遇到的决策问题，以及科普和个体化医疗建议之间的边界。
+3. 搜索语料中关于医生品牌、创业、临床价值和公共沟通的相关观点。
+4. 设计内容系统：专业能力证明、受众问题、可解释的推理、不确定性披露和合适的下一步。
+5. 审查每种内容形式的利益冲突、案例隐私风险、恐惧式说服和未经核验的功效表述。
 
-## Deliverable
+## 交付内容
 
-Return positioning, audience segments, a claim boundary, three to five durable content pillars, and an editorial review checklist. Prefer a smaller credible promise over a broad claim that cannot be defended.
-
+输出定位、受众分层、主张边界、三至五个长期内容支柱和编辑审查清单。可信且能被守住的小承诺，优于无法证明的大而全承诺。

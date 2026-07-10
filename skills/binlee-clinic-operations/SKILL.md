@@ -1,21 +1,20 @@
 ---
 name: binlee-clinic-operations
-description: Diagnose and improve medical-aesthetics clinic operations, including organization, doctor collaboration, channels, service design, pricing, and operational resilience, using the local Binlee corpus. Use for practical institutional operating problems and management-system design.
+description: 使用本地 Binlee 医美语料，诊断并改进医美机构的组织、医生协作、渠道、服务设计、定价和运营韧性。适用于机构负责人提出具体运营问题、需要设计管理系统或安排可验证实验时。
 ---
 
-# Binlee Clinic Operations
+# Binlee 机构运营
 
-Diagnose the operating system before prescribing a tactic.
+在给出策略之前，先诊断机构的运营系统。
 
-## Workflow
+## 工作流
 
-1. Read `../binlee-source-library/references/evidence-policy.md`.
-2. Define the symptom in observable terms: demand, conversion, delivery, retention, margin, compliance, or team coordination.
-3. Search the corpus for analogous operating logic, then inspect individual records rather than relying on titles alone.
-4. Map the problem across five links: patient need, clinical capability, service process, economic model, and governance.
-5. Produce a prioritized operating brief with root causes, reversible experiments, owner, metric, review date, and risks to consumer welfare.
+1. 读取 `../binlee-source-library/references/evidence-policy.md`。
+2. 把症状转成可观察指标：需求、转化、交付、留存、毛利、合规或团队协作。
+3. 搜索语料中的相似经营逻辑，再阅读具体文章记录，不要只依赖标题。
+4. 沿五个连接映射问题：患者需求、临床能力、服务流程、经济模型和治理。
+5. 输出有优先级的运营简报，包含根因假设、可逆实验、负责人、指标、复盘日期，以及对消费者权益的风险。
 
-## Guardrails
+## 约束
 
-Do not confuse channel volume with durable demand. Do not propose growth through exaggerated claims, opaque pricing, pressure sales, or a dilution of clinical decision-making. Flag any recommendation whose success depends on those mechanisms.
-
+不要把渠道数量混同于可持续需求。不要通过夸大宣传、价格不透明、强迫销售或削弱临床决策来换取增长。只要某项建议依赖这些机制，就要明确标记并说明风险。
