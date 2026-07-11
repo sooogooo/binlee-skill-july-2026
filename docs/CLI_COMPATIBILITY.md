@@ -22,7 +22,7 @@
 npx skills add sooogooo/binlee-skill-july-2026
 ```
 
-该命令会扫描仓库根目录的 `skills/`，当前版本可发现 7 个 Binlee skill。常用选项：
+该命令会扫描仓库根目录的 `skills/`，当前版本可发现 8 个 Binlee skill。常用选项：
 
 ```bash
 npx skills add sooogooo/binlee-skill-july-2026 --list

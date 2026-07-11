@@ -7,6 +7,13 @@ description: 检索、引用、检查并刷新来自 drli.beaucare.org 的李滨
 
 把本地语料当作可检索、可引用的原始文章集合，而不是当前临床、法律或市场数据的权威库。
 
+## 默认低交互模式
+
+- 用户给出主题时，直接检索并返回最相关的文章，不先询问关键词、分类或输出格式。
+- 默认返回少量高相关结果、文章摘要、日期和原文链接；需要完整记录时再展开。
+- 查询词不理想时，自动尝试同义词或相邻主题，并说明采用了什么检索假设。
+- 刷新语料只有在用户明确要求时执行；明确要求后不再重复确认，失败则保留旧语料并报告原因。
+
 ## 检索
 
 1. 读取 [references/corpus-guide.md](references/corpus-guide.md) 和 [references/evidence-policy.md](references/evidence-policy.md)。

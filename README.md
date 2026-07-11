@@ -55,7 +55,17 @@ node scripts/install-binlee.mjs --cli claude --scope project --skill binlee-cons
 
 安装器默认覆盖同名目标目录中的旧副本；它不会改动源仓库，也不会写入任何 API key 或账号凭据。完整说明见 [详细使用手册](docs/USER_GUIDE.md)、[CLI 兼容性说明](docs/CLI_COMPATIBILITY.md) 和 [推广长文](copy/PROMOTION_LONGFORM_ZH-CN.md)。
 
-## 六个应用 skill + 一个语料库 skill
+## 快速帮助
+
+不知道该调用哪个入口时，直接使用：
+
+```text
+请使用 binlee-help，帮我选择合适的 Binlee skill，并给出可复制的提问方式。
+```
+
+Codex 可使用 `$binlee-help`，Claude Code 可使用 `/binlee-help`。它会优先给出一个默认推荐，不要求你先完成一轮问答。
+
+## 六个应用 skill + 一个帮助路由 + 一个语料库 skill
 
 | Skill | 解决的问题 |
 | --- | --- |
@@ -66,6 +76,7 @@ node scripts/install-binlee.mjs --cli claude --scope project --skill binlee-cons
 | `binlee-consumer-decision` | 普通消费者的信息辨别、面诊准备与风险识别 |
 | `binlee-public-communication` | 面向公众的医美内容与信任审查 |
 | `binlee-source-library` | 检索、引用和刷新本地文章语料 |
+| `binlee-help` | 查看能力、选择入口和获得下一步建议 |
 
 ## 语料库
 

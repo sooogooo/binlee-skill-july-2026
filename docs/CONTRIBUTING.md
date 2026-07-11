@@ -32,4 +32,4 @@ node scripts/install-binlee.mjs --cli claude --scope project --dry-run
 node skills/binlee-source-library/scripts/search-corpus.mjs --query "消费者" 3
 ```
 
-提交前确认没有 token、密码、私钥或本机绝对路径；检查 7 个 `SKILL.md` 的 frontmatter 和 Git diff。
+提交前确认没有 token、密码、私钥或本机绝对路径；检查 8 个 `SKILL.md` 的 frontmatter 和 Git diff。

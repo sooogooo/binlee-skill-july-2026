@@ -14,7 +14,7 @@
 
 ## 它不是“会写医美文案”的提示词包
 
-Binlee Skills 是一组可以安装到 Codex、Claude Code、Gemini CLI 和 OpenCode 的 Agent Skills。仓库里有一份统一的 `skills/` 真源，包含七个按决策场景拆开的入口：
+Binlee Skills 是一组可以安装到 Codex、Claude Code、Gemini CLI 和 OpenCode 的 Agent Skills。仓库里有一份统一的 `skills/` 真源，包含八个入口：一个帮助路由、六个专业工作流和一个本地语料库入口：
 
 - `binlee-med-aesthetics-strategy`：看行业周期、定位、竞争、定价和经营选择。
 - `binlee-clinic-operations`：看组织、渠道、交付、医生协作和运营韧性。
@@ -23,8 +23,9 @@ Binlee Skills 是一组可以安装到 Codex、Claude Code、Gemini CLI 和 Open
 - `binlee-consumer-decision`：帮助普通消费者澄清目标、准备面诊、识别利益冲突。
 - `binlee-public-communication`：把专业内容讲得准确、清楚、不靠制造焦虑传播。
 - `binlee-source-library`：检索、引用和刷新本地文章语料。
+- `binlee-help`：在不知道从哪里开始时，快速选择入口并生成可复制提示词。
 
-这七个入口不是七套互相打架的观点。它们共享从 `drli.beaucare.org` 整理出的 582 篇文章全文、摘要、FAQ、日期和原文链接，也共享一条很朴素的证据纪律：
+这八个入口不是八套互相打架的观点。七个专业入口共享从 `drli.beaucare.org` 整理出的 582 篇文章全文、摘要、FAQ、日期和原文链接；帮助入口负责路由，也共享一条很朴素的证据纪律：
 
 **文章里的判断，不自动等于今天仍然有效的事实。**
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Binlee 帮助与路由"
+  short_description: "快速找到合适 skill 和下一步"
+  default_prompt: "使用 $binlee-help 帮我选择合适的 Binlee skill，并给出可复制的提问方式。"
