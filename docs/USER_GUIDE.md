@@ -2,7 +2,7 @@
 
 ## 1. 先理解：它不是一个“医美问答机器人”
 
-Binlee Skills 是一组按决策场景拆开的 Agent Skills。它把从 `drli.beaucare.org` 整理出的 582 篇文章保存在本地，再用七个不同入口处理不同问题：
+Binlee Skills 是一组按决策场景拆开的 Agent Skills。它把从 `drli.beaucare.org` 整理出的 582 篇文章保存在本地，再用八个入口处理不同问题：七个专业入口加一个帮助与路由入口。
 
 | Skill | 适合处理的问题 | 不适合替代的工作 |
 | --- | --- | --- |
@@ -13,8 +13,9 @@ Binlee Skills 是一组按决策场景拆开的 Agent Skills。它把从 `drli.b
 | `binlee-consumer-decision` | 消费者澄清需求、准备面诊、识别利益冲突 | 诊断、处方、指定项目或医生 |
 | `binlee-public-communication` | 科普、媒体回应、机构内容与公众信任审查 | 把不确定性写成确定承诺 |
 | `binlee-source-library` | 本地文章检索、引用、溯源与语料刷新 | 把旧文章当成当前法规或临床证据 |
+| `binlee-help` | 查看能力、选择入口、获得最短提问模板和下一步建议 | 代替专业 skill 做实际诊断 |
 
-七个入口共享同一套证据纪律：把**文章中的观点**、**跨文归纳**和**需另行核验的当前事实**分开。这个分层是整套技能最重要的安全阀。
+七个专业入口共享同一套证据纪律：把**文章中的观点**、**跨文归纳**和**需另行核验的当前事实**分开；`binlee-help`负责把任务路由到它们。这个分层是整套技能最重要的安全阀。
 
 ## 2. 安装
 
@@ -53,7 +54,17 @@ npx skills add sooogooo/binlee-skill-july-2026 --all --yes
 npx skills add sooogooo/binlee-skill-july-2026 --global --yes
 ```
 
-仓库根目录的 `skills/` 是唯一真源。标准 CLI 会从那里发现七个 skill，并根据目标 Agent 写入对应发现目录。
+仓库根目录的 `skills/` 是唯一真源。标准 CLI 会从那里发现八个 skill，并根据目标 Agent 写入对应发现目录。
+
+### 2.3 不知道用哪个 skill 时
+
+直接输入：
+
+```text
+请使用 binlee-help，帮我选择合适的 Binlee skill，并给出可复制的提问方式。
+```
+
+它会先给一个默认入口和提示词，不会把你卡在“请先选择角色、平台、格式”的确认流程里。只有安全边界、法律辖区或关键事实缺失会改变结果时，专业 skill 才会追问。
 
 ### 2.2 需要精确控制时使用仓库安装器
 
@@ -118,6 +129,7 @@ node scripts/install-binlee.mjs \
 - 要帮助普通人准备面诊和比较信息：`binlee-consumer-decision`
 - 要写科普、媒体回应或公众内容：`binlee-public-communication`
 - 要找原文、追溯观点或刷新本地语料：`binlee-source-library`
+- 不知道从哪里开始、想找下一步：`binlee-help`
 
 一个问题可以连续调用多个 skill，但要分阶段。比如“推出一个新项目”可以这样走：
 
