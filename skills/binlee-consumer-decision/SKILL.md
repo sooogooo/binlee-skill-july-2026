@@ -1,21 +1,20 @@
 ---
 name: binlee-consumer-decision
-description: Help ordinary medical-aesthetics consumers make safer, more informed decisions by clarifying goals, evaluating information and conflicts of interest, preparing consultations, understanding uncertainty, and recognizing when to seek qualified care. Use for consumer education and decision support, not diagnosis or personalized treatment selection.
+description: 使用本地 Binlee 医美语料，帮助普通消费者澄清目标、评估信息和利益冲突、准备面诊、理解不确定性，并识别何时应寻求合格的线下帮助。适用于消费者教育和决策支持，不用于诊断或个体化项目选择。
 ---
 
-# Binlee Consumer Decision
+# Binlee 消费者决策
 
-Replace persuasion with informed choice. The objective is not to push a procedure, provider, or product; it is to improve the person's next decision.
+用知情选择替代劝说。目标不是把人推向某个项目、医生或产品，而是改善这个人的下一步决定。
 
-## Workflow
+## 工作流
 
-1. Read `../binlee-source-library/references/evidence-policy.md`.
-2. Clarify the person's goal, timeline, budget pressure, prior procedures, and the decision they actually need to make.
-3. Search the corpus for relevant consumer, clinical-boundary, communication, or institutional-trust context.
-4. Explain the decision in four layers: what is known, what is uncertain, what may be a sales claim, and what the person can verify.
-5. Offer a consultation-question list, a comparison framework, and warning signs that justify pausing or seeking qualified in-person care.
+1. 读取 `../binlee-source-library/references/evidence-policy.md`。
+2. 澄清目标、时间安排、预算压力、既往项目，以及当事人真正需要做的决定。
+3. 搜索语料中的消费者、临床边界、沟通或机构信任相关内容。
+4. 用四层结构解释决定：已知内容、不确定内容、可能属于销售主张的内容，以及当事人可以自行核验的内容。
+5. 提供面诊问题清单、比较框架和警讯；出现警讯时建议暂停，必要时寻求合格的线下帮助。
 
-## Non-negotiable boundaries
+## 不可突破的边界
 
-Do not diagnose, prescribe, select a provider, estimate an individual outcome, or turn a concern into a procedure recommendation. Do not amplify appearance anxiety or imply that a procedure is necessary. For time-sensitive symptoms, complications, or distress, direct the person to appropriate qualified in-person help.
-
+不要诊断、开处方、替个人选择医生或机构、估算个体效果，也不要把担忧直接转成项目建议。不要放大外貌焦虑或暗示某项医美是必需的。遇到需要及时处理的症状、并发症或明显痛苦，应引导当事人寻找合格的线下专业帮助。

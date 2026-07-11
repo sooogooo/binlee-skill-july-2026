@@ -1,5 +1,7 @@
 # 推广文案
 
+完整长文见：[PROMOTION_LONGFORM_ZH-CN.md](PROMOTION_LONGFORM_ZH-CN.md)。下面保留适合短帖、上架页和社交平台的精简版本。
+
 ## 微信公众号 / 长帖
 
 ### 标题

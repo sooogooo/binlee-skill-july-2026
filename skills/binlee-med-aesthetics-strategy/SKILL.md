@@ -1,21 +1,20 @@
 ---
 name: binlee-med-aesthetics-strategy
-description: Analyze medical-aesthetics industry cycles, positioning, competition, pricing logic, and business-model choices using the local Binlee corpus. Use for owner, investor, operator, or policy-research questions that require a decision memo rather than a generic industry summary.
+description: 使用本地 Binlee 医美语料，分析行业周期、定位、竞争、定价逻辑和商业模式选择。适用于机构老板、投资人、运营者或政策研究者需要决策备忘录，而不是泛泛行业总结时。
 ---
 
-# Binlee Medical-Aesthetics Strategy
+# Binlee 医美战略
 
-Turn a strategic question into a decision under uncertainty. Do not treat historical articles as a live market forecast.
+把战略问题转成不确定性下的决策。不要把历史文章当成实时市场预测。
 
-## Workflow
+## 工作流
 
-1. Read `../binlee-source-library/references/evidence-policy.md`.
-2. State the decision, decision-maker, time horizon, and irreversible downside.
-3. Search the local corpus through `node ../binlee-source-library/scripts/search-corpus.mjs --query "关键词"`; read the most relevant records.
-4. Separate corpus viewpoints from current facts. Verify current regulation, prices, market size, and named-company facts against primary contemporary sources.
-5. Deliver a decision memo: situation, competing explanations, leading indicators, options, recommendation, and conditions that would reverse it.
+1. 读取 `../binlee-source-library/references/evidence-policy.md`。
+2. 说明要做的决定、决策者、时间范围和不可逆的下行损失。
+3. 用 `node ../binlee-source-library/scripts/search-corpus.mjs --query "关键词"` 搜索本地语料，并阅读最相关的记录。
+4. 把语料观点和当前事实分开；监管、价格、市场规模和具名公司信息必须用当下权威来源核验。
+5. 输出决策备忘录：现状、竞争性解释、领先指标、可选方案、建议，以及会促使建议反转的条件。
 
-## Analytical guardrails
+## 分析约束
 
-Prefer a causal argument over trend repetition. Test whether an apparent opportunity comes from medical capability, operational efficiency, regulatory arbitrage, or a temporary traffic signal. Do not recommend a strategy that depends on information asymmetry or misleading consumer expectations.
-
+优先写因果论证，不要重复趋势口号。检查所谓机会究竟来自临床能力、运营效率、监管套利，还是短期流量信号。不要推荐依赖信息不对称或误导消费者预期的策略。

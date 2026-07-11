@@ -1,4 +1,4 @@
 interface:
   display_name: "Binlee 医美语料库"
-  short_description: "Search and refresh a local medical-aesthetics article corpus"
-  default_prompt: "Use $binlee-source-library to search the local medical-aesthetics article corpus."
+  short_description: "检索并刷新本地医美文章语料库"
+  default_prompt: "使用 $binlee-source-library 检索本地医美文章语料库。"

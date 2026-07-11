@@ -1,24 +1,23 @@
-# Corpus guide
+# 语料库指南
 
-## Scope
+## 范围
 
-The local corpus contains 582 records extracted from `https://drli.beaucare.org` on 2026-07-10. It covers articles dated from 2018-08-29 through 2026-07-07.
+本地语料包含 2026-07-10 从 `https://drli.beaucare.org` 提取的 582 条记录，文章日期范围为 2018-08-29 至 2026-07-07。
 
-| Site category | Records |
+| 站点分类 | 记录数 |
 | --- | ---: |
 | 临床实践 | 222 |
 | 行业洞察 | 218 |
 | 机构运营 | 142 |
 
-## Files
+## 文件
 
-- `articles.json`: full preserved records: title, date, category, summary, HTML body, FAQs, image URL, and original article URL.
-- `article-index.jsonl`: one lightweight searchable record per article.
-- `manifest.json`: source, extraction time, count, date span, bundle URL, and SHA-256 digest.
+- `articles.json`：完整保存的记录，包括标题、日期、分类、摘要、HTML 正文、FAQ、图片 URL 和原文 URL。
+- `article-index.jsonl`：每篇文章一条轻量、可搜索的记录。
+- `manifest.json`：来源、提取时间、记录数、日期范围、bundle URL 和 SHA-256 摘要。
 
-Use `scripts/search-corpus.mjs` instead of loading the full corpus. Search returns compact metadata; `--id` returns the selected full record.
+使用 `scripts/search-corpus.mjs`，不要直接加载完整语料。搜索会返回紧凑的元数据；`--id` 会返回选定的完整记录。
 
-## Reading order
+## 阅读顺序
 
-Search by the decision question first, then read at least two relevant records before making a cross-article claim. A site category is only a navigation label; it is not an evidence rating or a topic taxonomy.
-
+先按决策问题搜索，再阅读至少两条相关记录，之后才做跨文归纳。站点分类只是导航标签，不代表证据等级，也不是严格的主题分类。

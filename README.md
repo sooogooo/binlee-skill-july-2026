@@ -53,7 +53,7 @@ node scripts/install-binlee.mjs --cli opencode --scope user
 node scripts/install-binlee.mjs --cli claude --scope project --skill binlee-consumer-decision
 ```
 
-安装器默认覆盖同名目标目录中的旧副本；它不会改动源仓库，也不会写入任何 API key 或账号凭据。完整说明见 [使用手册](docs/USER_GUIDE.md) 和 [CLI 兼容性说明](docs/CLI_COMPATIBILITY.md)。
+安装器默认覆盖同名目标目录中的旧副本；它不会改动源仓库，也不会写入任何 API key 或账号凭据。完整说明见 [详细使用手册](docs/USER_GUIDE.md)、[CLI 兼容性说明](docs/CLI_COMPATIBILITY.md) 和 [推广长文](copy/PROMOTION_LONGFORM_ZH-CN.md)。
 
 ## 六个应用 skill + 一个语料库 skill
 
@@ -82,6 +82,8 @@ docs/         使用、兼容性和维护手册
 copy/         项目介绍、CLI 上架文案和推广素材
 scripts/      跨 CLI 安装器
 ```
+
+对外介绍项目时，可直接使用 [简体中文推广长文](copy/PROMOTION_LONGFORM_ZH-CN.md)，再按平台调整标题、摘要和篇幅。
 
 ## 适用对象
 

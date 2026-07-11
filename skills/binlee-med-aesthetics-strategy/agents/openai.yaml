@@ -1,4 +1,4 @@
 interface:
   display_name: "Binlee 医美战略"
-  short_description: "Analyze medical-aesthetics strategy with grounded evidence"
-  default_prompt: "Use $binlee-med-aesthetics-strategy to assess a medical-aesthetics business decision."
+  short_description: "用证据分析医美经营与战略选择"
+  default_prompt: "使用 $binlee-med-aesthetics-strategy 评估一个医美经营决策。"

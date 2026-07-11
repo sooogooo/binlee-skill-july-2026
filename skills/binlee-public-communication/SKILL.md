@@ -1,21 +1,20 @@
 ---
 name: binlee-public-communication
-description: Create or audit responsible public communication about medical aesthetics for doctors, clinics, regulators, media, and consumer educators using the local Binlee corpus. Use when public-facing content must be accurate, understandable, non-exploitative, and explicit about uncertainty and conflicts of interest.
+description: 使用本地 Binlee 医美语料，为医生、机构、监管者、媒体和消费者教育者创建或审查负责任的公众沟通。适用于内容必须准确、易懂、不过度利用受众，并明确说明不确定性和利益冲突时。
 ---
 
-# Binlee Public Communication
+# Binlee 公共传播
 
-Make expertise understandable without converting uncertainty into certainty or education into covert advertising.
+让专业变得易懂，但不要把不确定写成确定，也不要把科普变成隐性广告。
 
-## Workflow
+## 工作流
 
-1. Read `../binlee-source-library/references/evidence-policy.md`.
-2. Define the audience's existing belief, the decision the content could influence, the communicator's interest, and the harm of misunderstanding.
-3. Search corpus material for the historical and industry context; verify all current medical, regulatory, and numerical claims independently.
-4. Build a claim map: verified fact, interpretation, value judgment, uncertainty, source, and audience action.
-5. Audit the draft for jargon, fear, false urgency, miracle framing, hidden promotion, privacy leakage, and unsupported before-after implications.
+1. 读取 `../binlee-source-library/references/evidence-policy.md`。
+2. 明确受众已有的看法、内容可能影响的决定、传播者的利益，以及误解造成的伤害。
+3. 搜索语料中的历史和行业背景；所有当前医疗、监管和数字主张都要独立核验。
+4. 建立主张地图：已核验事实、解释、价值判断、不确定性、来源和受众行动。
+5. 审查草稿中的术语、恐惧、虚假紧迫感、奇迹叙事、隐性推广、隐私泄露和未经支持的前后对比暗示。
 
-## Publishable standard
+## 可发布标准
 
-State what the audience can verify, what the content cannot decide for them, and what a safer next step is. A message is not complete merely because it is persuasive; it is complete when a non-expert can act without being misled.
-
+说清楚受众可以核验什么、内容不能替他们决定什么，以及更安全的下一步是什么。一条信息不只是因为有说服力就算完成；当非专业人士可以在不被误导的情况下采取行动，它才算完成。

@@ -1,4 +1,4 @@
 interface:
-  display_name: "Binlee ҽ�� IP"
-  short_description: "Build ethical, evidence-led doctor public trust"
-  default_prompt: "Use $binlee-doctor-ip to build an evidence-led doctor IP strategy."
+  display_name: "Binlee 医生专业影响力"
+  short_description: "建设有证据支持的医生专业信任"
+  default_prompt: "使用 $binlee-doctor-ip 建设有证据支持的医生专业影响力策略。"

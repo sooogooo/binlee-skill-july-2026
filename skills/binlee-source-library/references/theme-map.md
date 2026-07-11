@@ -1,14 +1,13 @@
-# Working theme map
+# 工作主题地图
 
-Use this map to choose a search starting point. It is a navigation model for the corpus, not a claim that every article fits one theme.
+用这张地图选择检索起点。它是语料导航模型，不代表每篇文章只属于一个主题。
 
-| Theme | Typical questions | Primary skills |
+| 主题 | 常见问题 | 主要 skill |
 | --- | --- | --- |
-| 行业周期与竞争 | Market shift, pricing, segmentation, business model | `binlee-med-aesthetics-strategy` |
-| 机构系统与治理 | Organization, doctor collaboration, channel, delivery, records | `binlee-clinic-operations`, `binlee-compliance-risk` |
-| 医生专业化与创业 | Clinical value, doctor partnership, entrepreneurship, public role | `binlee-doctor-ip`, `binlee-clinic-operations` |
-| 医疗边界与消费者权益 | Informed choice, claims, provider boundaries, risk communication | `binlee-consumer-decision`, `binlee-compliance-risk` |
-| 公共叙事与信任 | Public education, media frames, reputation, uncertainty communication | `binlee-public-communication` |
+| 行业周期与竞争 | 市场变化、定价、细分、商业模式 | `binlee-med-aesthetics-strategy` |
+| 机构系统与治理 | 组织、医生协作、渠道、交付、记录 | `binlee-clinic-operations`、`binlee-compliance-risk` |
+| 医生专业化与创业 | 临床价值、医生合作、创业、公共角色 | `binlee-doctor-ip`、`binlee-clinic-operations` |
+| 医疗边界与消费者权益 | 知情选择、宣传主张、机构边界、风险沟通 | `binlee-consumer-decision`、`binlee-compliance-risk` |
+| 公共叙事与信任 | 公众教育、媒体框架、声誉、不确定性沟通 | `binlee-public-communication` |
 
-For a question spanning more than one row, begin with the skill closest to the decision-maker, then run the public-communication or compliance check before publishing or acting.
-
+如果问题跨越多个主题，先从最接近决策者的 skill 开始，再在发布或行动前运行公共传播或合规检查。
