@@ -7,8 +7,10 @@
     "node": ">=20"
   },
   "scripts": {
+    "corpus:check": "node skills/binlee-source-library/scripts/refresh-corpus.mjs --check",
     "corpus:normalize": "node skills/binlee-source-library/scripts/normalize-corpus.mjs",
-    "test": "node --test tests/corpus-identity.test.mjs tests/corpus-integrity.test.mjs tests/install-binlee.test.mjs tests/search-corpus.test.mjs tests/skills-metadata.test.mjs",
+    "corpus:refresh": "node skills/binlee-source-library/scripts/refresh-corpus.mjs --apply",
+    "test": "node --test tests/corpus-bundle.test.mjs tests/corpus-identity.test.mjs tests/corpus-integrity.test.mjs tests/corpus-refresh.test.mjs tests/install-binlee.test.mjs tests/search-corpus.test.mjs tests/skills-metadata.test.mjs",
     "test:known-gaps": "node --test tests-known-gaps/install-dependencies.test.mjs",
     "test:skills-cli": "npx -y skills@latest add . --list",
     "validate": "npm test"

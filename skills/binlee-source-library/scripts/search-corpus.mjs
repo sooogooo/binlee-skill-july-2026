@@ -5,9 +5,13 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 import { rankArticles } from "./corpus-search.mjs";
+import { corpusArtifactPaths, recoverCorpusTransaction } from "./corpus-transaction.mjs";
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
-const corpusPath = join(scriptDir, "..", "references", "articles.json");
+const referencesDir = join(scriptDir, "..", "references");
+const artifactPaths = corpusArtifactPaths(referencesDir);
+await recoverCorpusTransaction(artifactPaths);
+const corpusPath = artifactPaths.articles;
 const articles = JSON.parse(await readFile(corpusPath, "utf8"));
 const [command, value, limitValue] = process.argv.slice(2);
 const limit = Number.parseInt(limitValue ?? "8", 10);

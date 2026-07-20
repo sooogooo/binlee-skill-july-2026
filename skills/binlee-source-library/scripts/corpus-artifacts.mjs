@@ -10,7 +10,7 @@ export function canonicalizeOriginUrl(originUrl) {
     throw new Error(`Invalid article origin URL: ${originUrl}`);
   }
 
-  if (!['http:', 'https:'].includes(url.protocol)) {
+  if (!["http:", "https:"].includes(url.protocol)) {
     throw new Error(`Unsupported article origin URL: ${originUrl}`);
   }
 
@@ -90,6 +90,8 @@ export function buildCorpusArtifacts(rawArticles, source = {}) {
   const manifest = {
     sourceUrl: source.sourceUrl,
     bundleUrl: source.bundleUrl,
+    ...(source.bundleSha256 ? { bundleSha256: source.bundleSha256 } : {}),
+    ...(source.bundleByteLength ? { bundleByteLength: source.bundleByteLength } : {}),
     fetchedAt: source.fetchedAt ?? new Date().toISOString(),
     articleCount: articles.length,
     dateRange: { earliest: dates[0], latest: dates.at(-1) },
