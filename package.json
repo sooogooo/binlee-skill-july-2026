@@ -1,0 +1,15 @@
+{
+  "name": "binlee-skill-july-2026",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/corpus-integrity.test.mjs tests/install-binlee.test.mjs tests/search-corpus.test.mjs tests/skills-metadata.test.mjs",
+    "test:known-gaps": "node --test tests-known-gaps/corpus-identity.test.mjs tests-known-gaps/install-dependencies.test.mjs tests-known-gaps/search-corpus.test.mjs",
+    "test:skills-cli": "npx -y skills@latest add . --list",
+    "validate": "npm test"
+  }
+}
