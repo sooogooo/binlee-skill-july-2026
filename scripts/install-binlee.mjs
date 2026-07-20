@@ -7,6 +7,36 @@ import { fileURLToPath } from "node:url";
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourceRoot = join(repositoryRoot, "skills");
+const sourceLibrary = "binlee-source-library";
+const skillDependencies = new Map([
+  ["binlee-clinic-operations", [sourceLibrary]],
+  ["binlee-compliance-risk", [sourceLibrary]],
+  ["binlee-consumer-decision", [sourceLibrary]],
+  ["binlee-doctor-ip", [sourceLibrary]],
+  ["binlee-med-aesthetics-strategy", [sourceLibrary]],
+  ["binlee-public-communication", [sourceLibrary]],
+]);
+
+const resolveSkillDependencies = (requestedSkillNames) => {
+  const resolvedSkillNames = [];
+  const visitedSkillNames = new Set();
+
+  const visit = (skillName) => {
+    if (visitedSkillNames.has(skillName)) {
+      return;
+    }
+    visitedSkillNames.add(skillName);
+    for (const dependency of skillDependencies.get(skillName) ?? []) {
+      visit(dependency);
+    }
+    resolvedSkillNames.push(skillName);
+  };
+
+  for (const skillName of requestedSkillNames) {
+    visit(skillName);
+  }
+  return resolvedSkillNames;
+};
 
 const usage = `Usage:
   node scripts/install-binlee.mjs --cli <codex|claude|gemini|opencode> --scope <user|project> [--skill <name>] [--dry-run]
@@ -17,6 +47,26 @@ Examples:
 `;
 
 const argumentsList = process.argv.slice(2);
+const valueOptions = new Set(["--cli", "--scope", "--skill"]);
+const booleanOptions = new Set(["--dry-run", "--help"]);
+for (let index = 0; index < argumentsList.length; index += 1) {
+  const argument = argumentsList[index];
+  if (valueOptions.has(argument)) {
+    const value = argumentsList[index + 1];
+    if (!value || value.startsWith("--")) {
+      process.stderr.write(`Missing value for ${argument}.\n`);
+      process.exit(1);
+    }
+    index += 1;
+    continue;
+  }
+  if (booleanOptions.has(argument)) {
+    continue;
+  }
+  process.stderr.write(`Unknown option: ${argument}\n`);
+  process.exit(1);
+}
+
 const getFlag = (name) => {
   const index = argumentsList.indexOf(name);
   return index === -1 ? undefined : argumentsList[index + 1];
@@ -64,7 +114,7 @@ if (selectedSkill && !skillNamePattern.test(selectedSkill)) {
 
 const directoryEntries = await readdir(sourceRoot, { withFileTypes: true });
 const skillNames = selectedSkill
-  ? [selectedSkill]
+  ? resolveSkillDependencies([selectedSkill])
   : directoryEntries.filter((entry) => entry.isDirectory() && skillNamePattern.test(entry.name)).map((entry) => entry.name).sort();
 
 if (skillNames.length === 0) {
