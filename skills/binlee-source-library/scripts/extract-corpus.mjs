@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
+
+import { buildCorpusArtifacts } from "./corpus-artifacts.mjs";
 
 const [bundlePath, articlesPath, indexPath, manifestPath, sourceUrl, bundleUrl] = process.argv.slice(2);
 
@@ -28,35 +29,16 @@ if (template.includes("${")) {
 }
 
 const articleJson = Function(`"use strict"; return \`${template}\`;`)();
-const articles = JSON.parse(articleJson);
-const dates = articles.map((article) => article.date).filter(Boolean).sort();
-const categories = Object.fromEntries(
-  Object.entries(articles.reduce((counts, article) => ({ ...counts, [article.category]: (counts[article.category] ?? 0) + 1 }), {})).sort(),
-);
-const index = articles.map((article) => JSON.stringify({
-  id: article.id,
-  title: article.title,
-  date: article.date,
-  category: article.category,
-  summary: article.summary,
-  faqs: article.faqs ?? [],
-  originUrl: article.originUrl,
-})).join("\n");
-const manifest = {
+const artifacts = buildCorpusArtifacts(JSON.parse(articleJson), {
   sourceUrl,
   bundleUrl,
-  fetchedAt: new Date().toISOString(),
-  articleCount: articles.length,
-  dateRange: { earliest: dates[0], latest: dates.at(-1) },
-  categories,
-  sha256: createHash("sha256").update(articleJson).digest("hex"),
-};
+});
 
 await Promise.all([
-  writeFile(articlesPath, JSON.stringify(articles)),
-  writeFile(indexPath, `${index}\n`),
-  writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`),
+  writeFile(articlesPath, artifacts.articlesText),
+  writeFile(indexPath, artifacts.indexText),
+  writeFile(manifestPath, artifacts.manifestText),
 ]);
 
-process.stdout.write(`${JSON.stringify(manifest, null, 2)}\n`);
+process.stdout.write(`${JSON.stringify(artifacts.manifest, null, 2)}\n`);
 

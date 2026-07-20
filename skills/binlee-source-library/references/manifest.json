@@ -2,15 +2,15 @@
   "sourceUrl": "https://drli.beaucare.org",
   "bundleUrl": "https://drli.beaucare.org/assets/index-Bzx1eKWt.js",
   "fetchedAt": "2026-07-10T14:23:07.196Z",
-  "articleCount": 582,
+  "articleCount": 577,
   "dateRange": {
     "earliest": "2018-08-29",
     "latest": "2026-07-07"
   },
   "categories": {
-    "临床实践": 222,
     "机构运营": 142,
-    "行业洞察": 218
+    "临床实践": 219,
+    "行业洞察": 216
   },
-  "sha256": "130634e63533f1c6042a7956929798edd6d1601629cb9a90490189c4a84678d5"
+  "sha256": "88b379e60d66e3a4fe132845c04bdcae34e44eef28c5380ec0620aa929f3757d"
 }
