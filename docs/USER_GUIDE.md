@@ -2,7 +2,7 @@
 
 ## 1. 先理解：它不是一个“医美问答机器人”
 
-Binlee Skills 是一组按决策场景拆开的 Agent Skills。它把从 `drli.beaucare.org` 整理出的 582 篇文章保存在本地，再用八个入口处理不同问题：七个专业入口加一个帮助与路由入口。
+Binlee Skills 是一组按决策场景拆开的 Agent Skills。它把从 `drli.beaucare.org` 整理并按原文来源去重的 577 篇文章保存在本地，再用八个入口处理不同问题：七个专业入口加一个帮助与路由入口。
 
 | Skill | 适合处理的问题 | 不适合替代的工作 |
 | --- | --- | --- |
@@ -207,7 +207,7 @@ node scripts/install-binlee.mjs \
 
 日常使用不需要反复打开原网站。`binlee-source-library` 已经把文章正文、标题、日期、摘要、FAQ 和原文链接保存在本地。
 
-搜索时不要一次加载完整的 `articles.json`，先用轻量索引缩小范围：
+搜索时不要直接打开完整的 `articles.json`，先用检索脚本缩小范围。多个关键词用空格分隔，结果会返回相关性分数、实际命中的关键词和上下文片段：
 
 ```bash
 node skills/binlee-source-library/scripts/search-corpus.mjs \

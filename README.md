@@ -80,7 +80,7 @@ Codex 可使用 `$binlee-help`，Claude Code 可使用 `/binlee-help`。它会�
 
 ## 语料库
 
-`binlee-source-library` 保存从 [drli.beaucare.org](https://drli.beaucare.org) 提取的 582 篇文章全文、摘要、FAQ、日期和原文链接。语料是可追溯的作者观点库，不是现行临床、法律或市场事实的替代品。
+`binlee-source-library` 保存从 [drli.beaucare.org](https://drli.beaucare.org) 提取并按原文来源去重的 577 篇文章全文、摘要、FAQ、日期和原文链接。语料是可追溯的作者观点库，不是现行临床、法律或市场事实的替代品。
 
 每个 skill 都要求区分：**文章中的观点**、**跨文归纳**、**需另行核验的当前事实**。消费者 skill 不做诊断、不替个人选择项目或医生；公共传播 skill 会检查焦虑营销、隐性推广、虚假确定性和利益冲突。
 

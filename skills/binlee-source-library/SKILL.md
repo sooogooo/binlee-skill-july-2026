@@ -17,7 +17,7 @@ description: 检索、引用、检查并刷新来自 drli.beaucare.org 的李滨
 ## 检索
 
 1. 读取 [references/corpus-guide.md](references/corpus-guide.md) 和 [references/evidence-policy.md](references/evidence-policy.md)。
-2. 用 `node scripts/search-corpus.mjs --query "关键词"` 搜索标题、摘要、FAQ 和正文。
+2. 用 `node scripts/search-corpus.mjs --query "关键词"` 搜索标题、FAQ、摘要、分类和正文；多个关键词用空格分隔，并根据 `score`、`matchedTerms` 和 `snippet` 判断相关性。
 3. 用 `node scripts/search-corpus.mjs --id "文章-id"` 读取选中的完整记录。
 4. 每条重要的语料结论都要附文章标题、发布日期和原文链接。
 

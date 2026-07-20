@@ -12,7 +12,7 @@
 
 医美行业并不缺观点，缺的是能把观点变成可靠行动的判断系统。
 
-我们把 582 篇医美文章保存在本地，整理成八个可调用的 Agent Skills：帮助路由、行业战略、机构运营、医生 IP、合规风险、消费者决策、公共传播，以及负责检索和引用的本地语料库。
+我们把按原文来源去重的 577 篇医美文章保存在本地，整理成八个可调用的 Agent Skills：帮助路由、行业战略、机构运营、医生 IP、合规风险、消费者决策、公共传播，以及负责检索和引用的本地语料库。
 
 机构老板可以用它拆解“增长”背后的组织与交付问题；医生可以用它建设专业表达，而不是堆砌头衔和案例；研究者可以用它观察行业叙事与监管边界；普通消费者则可以在面诊前先把需求、风险、利益冲突和需要验证的问题想清楚。
 
@@ -24,7 +24,7 @@ Binlee 支持 Codex、Claude Code、Gemini CLI 和 OpenCode。一份 canonical s
 
 医美 AI 不该只会写“行业风口”。
 
-Binlee Skills 把 582 篇本地文章 + 经营判断 + 合规边界 + 消费者决策，做成可安装到 Codex、Claude Code、Gemini CLI、OpenCode 的 Agent Skills。
+Binlee Skills 把 577 篇本地文章 + 经营判断 + 合规边界 + 消费者决策，做成可安装到 Codex、Claude Code、Gemini CLI、OpenCode 的 Agent Skills。
 
 老板看经营，医生做 IP，研究者看治理，消费者准备面诊。
 
@@ -34,4 +34,4 @@ Binlee Skills 把 582 篇本地文章 + 经营判断 + 合规边界 + 消费者�
 
 ## 开发者社区短版
 
-Binlee Skills is a cross-CLI Agent Skills package for medical aesthetics. It ships six decision workflows, a help router, and a local corpus of 582 source articles, and installs into Codex, Claude Code, Gemini CLI, or OpenCode from one canonical `skills/` tree. The design emphasizes provenance, freshness, consumer safety, and public communication—not generic trend summaries.
+Binlee Skills is a cross-CLI Agent Skills package for medical aesthetics. It ships six decision workflows, a help router, and a deduplicated local corpus of 577 source articles, and installs into Codex, Claude Code, Gemini CLI, or OpenCode from one canonical `skills/` tree. The design emphasizes provenance, freshness, consumer safety, and public communication—not generic trend summaries.
