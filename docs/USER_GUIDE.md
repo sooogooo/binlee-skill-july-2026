@@ -221,13 +221,19 @@ node skills/binlee-source-library/scripts/search-corpus.mjs \
   --id "文章-id"
 ```
 
-需要更新语料时，手动运行：
+需要更新语料时，先预览源站变化：
 
 ```bash
-bash skills/binlee-source-library/scripts/refresh-corpus.sh
+bash skills/binlee-source-library/scripts/refresh-corpus.sh --check
 ```
 
-刷新只在明确需要时访问源站。脚本会一起更新正文、索引和 manifest；如果提取失败，应停止并报告，不要把不完整的结果当成新语料。
+预览会报告新增、删除和修改记录，不会写入文件。确认变化合理后，再显式应用：
+
+```bash
+bash skills/binlee-source-library/scripts/refresh-corpus.sh --apply
+```
+
+应用模式会先完整生成并校验正文、索引和 manifest，再替换旧产物；如果下载或提取失败，旧语料保持不变。
 
 ### 6.1 语料可以回答什么
 

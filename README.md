@@ -102,10 +102,10 @@ scripts/      跨 CLI 安装器
 
 ## 贡献与更新
 
-先读 [贡献与维护说明](docs/CONTRIBUTING.md)。语料刷新使用：
+先读 [贡献与维护说明](docs/CONTRIBUTING.md)。先预览语料变化：
 
 ```bash
-bash skills/binlee-source-library/scripts/refresh-corpus.sh
+bash skills/binlee-source-library/scripts/refresh-corpus.sh --check
 ```
 
-刷新只在手动运行时访问源站；日常使用通过本地 `articles.json` 和轻量索引完成检索。
+确认新增、删除和修改记录合理后，再运行 `bash skills/binlee-source-library/scripts/refresh-corpus.sh --apply`。刷新只在手动运行时访问源站；日常使用通过本地 `articles.json` 和轻量索引完成检索。

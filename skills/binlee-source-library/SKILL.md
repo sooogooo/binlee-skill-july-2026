@@ -25,9 +25,9 @@ description: 检索、引用、检查并刷新来自 drli.beaucare.org 的李滨
 
 ## 刷新
 
-只有在确实需要更新语料时，才运行 `bash scripts/refresh-corpus.sh`。脚本会下载当前应用 bundle，校验文章包装结构，并一起替换本地语料、索引和 manifest。
+只有在确实需要更新语料时，才运行 `bash scripts/refresh-corpus.sh --check`。检查模式会下载当前应用 bundle，静态解析文章并报告新增、删除和修改，但不写入文件。
 
-提取失败时要停止并报告，不要悄悄生成不完整的语料库。
+检查结果合理后，才运行 `bash scripts/refresh-corpus.sh --apply`。应用模式会在临时目录生成并校验语料、索引和 manifest，再事务式替换现有产物；下载或提取失败时保留旧语料并报告原因。
 
 ## 输出纪律
 

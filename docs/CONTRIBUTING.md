@@ -19,10 +19,16 @@
 更新前先确认源站仍然公开且文章包装格式没有改变：
 
 ```bash
-bash skills/binlee-source-library/scripts/refresh-corpus.sh
+bash skills/binlee-source-library/scripts/refresh-corpus.sh --check
 ```
 
-检查 `manifest.json` 的文章数量、日期范围和 SHA-256；若提取失败，保留旧语料并修复脚本，不要提交半成品。
+检查预览中的新增、删除、修改、文章数量、日期范围和 bundle SHA-256。确认变化合理后再运行：
+
+```bash
+bash skills/binlee-source-library/scripts/refresh-corpus.sh --apply
+```
+
+若下载、解析或产物校验失败，旧语料必须保持不变；不要绕过检查模式或提交半成品。
 
 ## 验证清单
 

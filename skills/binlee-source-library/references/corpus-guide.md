@@ -18,6 +18,8 @@
 
 使用 `scripts/search-corpus.mjs`，不要直接加载完整语料。多个关键词用空格分隔；搜索会按标题、FAQ、摘要、分类和正文加权排序，并返回 `score`、`matchedTerms` 和 `snippet`。`--id` 会返回选定的完整记录。
 
+刷新语料时先运行 `scripts/refresh-corpus.sh --check` 查看变化，不会修改现有文件。只有在新增、删除和修改记录均合理时，才运行 `scripts/refresh-corpus.sh --apply`。刷新链不会执行远程 bundle 中的代码，并会在替换前校验三个生成产物的一致性。
+
 ## 阅读顺序
 
 先按决策问题搜索，再阅读至少两条相关记录，之后才做跨文归纳。站点分类只是导航标签，不代表证据等级，也不是严格的主题分类。
