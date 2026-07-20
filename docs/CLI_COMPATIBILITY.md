@@ -26,9 +26,11 @@ npx skills add sooogooo/binlee-skill-july-2026
 
 ```bash
 npx skills add sooogooo/binlee-skill-july-2026 --list
-npx skills add sooogooo/binlee-skill-july-2026 --skill binlee-consumer-decision
+npx skills add sooogooo/binlee-skill-july-2026 --skill binlee-consumer-decision binlee-source-library
 npx skills add sooogooo/binlee-skill-july-2026 --global --yes
 ```
+
+标准 `npx skills` CLI 当前只安装 `--skill` 后显式列出的名称，不解析本仓库的依赖关系，因此上面的选择性安装命令同时列出了业务入口和语料库。若需要自动补齐依赖，请改用仓库自带安装器。
 
 ### 仓库自带安装器
 
@@ -52,6 +54,8 @@ node scripts/install-binlee.mjs --cli claude --scope project
 ```bash
 node scripts/install-binlee.mjs --cli codex --scope user --skill binlee-consumer-decision
 ```
+
+仓库安装器会为六个业务 skill 自动安装 `binlee-source-library`，依赖在所选 skill 之前安装且只安装一次。`binlee-help` 和 `binlee-source-library` 保持单独安装；不指定 `--skill` 时仍安装全部八个。`--dry-run` 会按相同顺序显示完整依赖闭包，但不写入目标目录。
 
 ## CLI 差异的处理原则
 

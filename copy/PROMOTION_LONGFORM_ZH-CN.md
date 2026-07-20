@@ -103,12 +103,14 @@ npx skills add sooogooo/binlee-skill-july-2026
 npx skills add sooogooo/binlee-skill-july-2026 --list
 ```
 
-只安装消费者决策入口：
+只安装消费者决策入口及其语料库依赖：
 
 ```bash
 npx skills add sooogooo/binlee-skill-july-2026 \
-  --skill binlee-consumer-decision
+  --skill binlee-consumer-decision binlee-source-library
 ```
+
+标准 `npx skills` CLI 当前不会自动解析 skill 依赖，因此需要同时显式列出这两个名称；仓库自带安装器则会自动补齐语料库。
 
 安装后，你可以这样开始：
 

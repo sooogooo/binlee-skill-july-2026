@@ -20,12 +20,14 @@ npx skills add sooogooo/binlee-skill-july-2026
 npx skills add sooogooo/binlee-skill-july-2026 --list
 ```
 
-只安装一个技能，或跳过确认提示：
+只安装一个业务入口及其语料库依赖，或跳过确认提示：
 
 ```bash
-npx skills add sooogooo/binlee-skill-july-2026 --skill binlee-consumer-decision
+npx skills add sooogooo/binlee-skill-july-2026 --skill binlee-consumer-decision binlee-source-library
 npx skills add sooogooo/binlee-skill-july-2026 --all --yes
 ```
+
+标准 `npx skills` CLI 当前不会解析 skill 之间的依赖，因此上面的 `--skill` 同时显式列出了业务入口和语料库。也可以使用下面的仓库安装器，它会自动解析这项依赖。
 
 需要安装到用户级目录时加 `--global`；不加时由 `skills` CLI 按当前项目环境选择项目级安装。`npx skills` 会按目标 CLI 的发现规则写入对应目录。
 
@@ -52,6 +54,8 @@ node scripts/install-binlee.mjs --cli opencode --scope user
 ```bash
 node scripts/install-binlee.mjs --cli claude --scope project --skill binlee-consumer-decision
 ```
+
+选择六个业务 skill 中的任意一个时，仓库安装器会先安装 `binlee-source-library`，再安装所选 skill。直接选择 `binlee-help` 或 `binlee-source-library` 时仍只安装一个；`--dry-run` 会列出完整安装计划但不写入文件。
 
 安装器默认覆盖同名目标目录中的旧副本；它不会改动源仓库，也不会写入任何 API key 或账号凭据。完整说明见 [详细使用手册](docs/USER_GUIDE.md)、[CLI 兼容性说明](docs/CLI_COMPATIBILITY.md) 和 [推广长文](copy/PROMOTION_LONGFORM_ZH-CN.md)。
 
