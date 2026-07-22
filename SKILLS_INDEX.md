@@ -35,10 +35,10 @@ description: "供搜索引擎和 AI 爬虫发现本仓库全部技能、文档�
 
 ## CLI 适配器
 
-- [Claude Code 适配器](adapters/claude-code/README.html)
-- [Codex CLI 适配器](adapters/codex/README.html)
-- [Gemini CLI 适配器](adapters/gemini-cli/README.html)
-- [OpenCode 适配器](adapters/opencode/README.html)
+- [Claude Code 适配器](adapters/claude-code/)
+- [Codex CLI 适配器](adapters/codex/)
+- [Gemini CLI 适配器](adapters/gemini-cli/)
+- [OpenCode 适配器](adapters/opencode/)
 
 ## 文档
 
