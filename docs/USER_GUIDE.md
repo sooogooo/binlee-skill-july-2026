@@ -4,16 +4,16 @@
 
 Binlee Skills 是一组按决策场景拆开的 Agent Skills。它把从 `drli.beaucare.org` 整理并按原文来源去重的 577 篇文章保存在本地，再用八个入口处理不同问题：七个专业入口加一个帮助与路由入口。
 
-| Skill | 适合处理的问题 | 不适合替代的工作 |
-| --- | --- | --- |
-| `binlee-med-aesthetics-strategy` | 行业周期、定位、竞争、定价与经营选择 | 直接预测市场、替代尽调 |
-| `binlee-clinic-operations` | 组织、渠道、交付、医生协作与运营系统 | 用“增长话术”掩盖交付问题 |
-| `binlee-doctor-ip` | 医生定位、专业内容、创业与个人品牌 | 把医生包装成销售代言人 |
-| `binlee-compliance-risk` | 宣传、医疗边界、记录、消费者保护与风险分级 | 在没有最新法源时给法律结论 |
-| `binlee-consumer-decision` | 消费者澄清需求、准备面诊、识别利益冲突 | 诊断、处方、指定项目或医生 |
-| `binlee-public-communication` | 科普、媒体回应、机构内容与公众信任审查 | 把不确定性写成确定承诺 |
-| `binlee-source-library` | 本地文章检索、引用、溯源与语料刷新 | 把旧文章当成当前法规或临床证据 |
-| `binlee-help` | 查看能力、选择入口、获得最短提问模板和下一步建议 | 代替专业 skill 做实际诊断 |
+| Skill                            | 适合处理的问题                                   | 不适合替代的工作               |
+| -------------------------------- | ------------------------------------------------ | ------------------------------ |
+| `binlee-med-aesthetics-strategy` | 行业周期、定位、竞争、定价与经营选择             | 直接预测市场、替代尽调         |
+| `binlee-clinic-operations`       | 组织、渠道、交付、医生协作与运营系统             | 用“增长话术”掩盖交付问题       |
+| `binlee-doctor-ip`               | 医生定位、专业内容、创业与个人品牌               | 把医生包装成销售代言人         |
+| `binlee-compliance-risk`         | 宣传、医疗边界、记录、消费者保护与风险分级       | 在没有最新法源时给法律结论     |
+| `binlee-consumer-decision`       | 消费者澄清需求、准备面诊、识别利益冲突           | 诊断、处方、指定项目或医生     |
+| `binlee-public-communication`    | 科普、媒体回应、机构内容与公众信任审查           | 把不确定性写成确定承诺         |
+| `binlee-source-library`          | 本地文章检索、引用、溯源与语料刷新               | 把旧文章当成当前法规或临床证据 |
+| `binlee-help`                    | 查看能力、选择入口、获得最短提问模板和下一步建议 | 代替专业 skill 做实际诊断      |
 
 七个专业入口共享同一套证据纪律：把**文章中的观点**、**跨文归纳**和**需另行核验的当前事实**分开；`binlee-help`负责把任务路由到它们。这个分层是整套技能最重要的安全阀。
 
@@ -58,6 +58,80 @@ npx skills add sooogooo/binlee-skill-july-2026 --global --yes
 
 仓库根目录的 `skills/` 是唯一真源。标准 CLI 会从那里发现八个 skill，并根据目标 Agent 写入对应发现目录。
 
+官方 CLI 的 `skills-lock.json` 只属于官方 CLI；仓库安装器从不读取或修改它。旧版官方 CLI 创建的项目级记录可能无法用 `npx skills update --project` 原位更新，此时用完整 URL 显式重装：
+
+```bash
+npx skills add https://github.com/sooogooo/binlee-skill-july-2026 -y
+```
+
+Binlee Skills 只通过 GitHub 仓库和已有 `v*` 标签分发。`package.json` 保持 `private: true`，没有 npm 发布物。
+
+### 2.2 需要精确控制时使用仓库安装器
+
+如果你要明确指定 Codex、Claude Code、Gemini CLI 或 OpenCode，以及用户级还是项目级目录，可以先克隆仓库。每次安装或升级都先运行只读 `--check`，再决定是否 `--apply`：
+
+```bash
+git clone https://github.com/sooogooo/binlee-skill-july-2026.git
+cd binlee-skill-july-2026
+
+node scripts/install-binlee.mjs --check --cli codex --scope user
+node scripts/install-binlee.mjs --apply --cli codex --scope user
+```
+
+把 `codex` 换成 `claude`、`gemini` 或 `opencode` 即可选择其他 CLI。项目级安装适合把 skill 和项目代码一起版本控制：
+
+```bash
+node scripts/install-binlee.mjs --check --cli claude --scope project
+node scripts/install-binlee.mjs --apply --cli claude --scope project
+```
+
+只检查并安装一个 skill：
+
+```bash
+node scripts/install-binlee.mjs --check --cli codex --scope project --skill binlee-consumer-decision
+node scripts/install-binlee.mjs --apply --cli codex --scope project --skill binlee-consumer-decision
+```
+
+仓库安装器维护明确的依赖映射。选择 `binlee-med-aesthetics-strategy`、`binlee-clinic-operations`、`binlee-doctor-ip`、`binlee-compliance-risk`、`binlee-consumer-decision` 或 `binlee-public-communication` 时，它会先处理 `binlee-source-library`，再处理所选 skill。选择 `binlee-help` 或 `binlee-source-library` 时仍只处理一个；不传 `--skill` 时处理全部八个。
+
+`--check` 会为每个目录报告一种状态：
+
+| 状态          | 含义                                                    | 安全动作                                          |
+| ------------- | ------------------------------------------------------- | ------------------------------------------------- |
+| `missing`     | 目标目录不存在                                          | `--apply` 可安装                                  |
+| `adoptable`   | 目标内容与当前 canonical 内容完全一致，但尚无安装器状态 | `--apply` 只纳入管理                              |
+| `current`     | 内容和版本都与当前 release 一致                         | 无需动作                                          |
+| `upgradeable` | 目标仍与已记录版本一致，canonical 内容或版本已更新      | `--apply` 可升级                                  |
+| `conflict`    | 目标含未受信任内容，或受管理副本被本地修改              | 普通 `--apply` 拒绝；检查后才能决定是否 `--force` |
+
+退出码是自动化脚本的稳定接口：
+
+| 退出码 | 含义                                                             |
+| ------ | ---------------------------------------------------------------- |
+| `0`    | 检查全部为 `current`，或写操作成功                               |
+| `2`    | `--check` 发现 `missing`、`adoptable` 或 `upgradeable`，没有冲突 |
+| `3`    | 冲突阻止检查、应用或回滚                                         |
+| `1`    | 参数、状态、符号链接或其他文件系统错误                           |
+
+`--apply` 遇到 `conflict` 时不会写入任何目标或状态。确认确实要舍弃冲突内容后，显式强制安装：
+
+```bash
+node scripts/install-binlee.mjs --force --cli codex --scope project --skill binlee-consumer-decision
+```
+
+`--force` 会先完整备份将被替换的 Binlee 目录。状态保存在 `<CLI 配置根目录>/.binlee-install/state.json`，备份保存在 `<CLI 配置根目录>/.binlee-install/backups/<transaction-id>/`。例如 Codex 项目级安装使用 `.agents/.binlee-install/`，Claude 用户级安装使用 `~/.claude/.binlee-install/`。
+
+回滚只允许撤销最后一次成功事务（LIFO）：
+
+```bash
+node scripts/install-binlee.mjs --rollback --cli codex --scope project
+node scripts/install-binlee.mjs --rollback <transaction-id> --cli codex --scope project
+```
+
+如果安装后又改过目标目录，普通回滚会以退出码 `3` 拒绝覆盖；只有审查改动后显式加入 `--force` 才会继续。安装和回滚只处理事务记录中的 Binlee skill，目标发现目录里的其他 skill 和无关数据会保留。`--dry-run` 仍可作为旧流程的只读预览别名，但新流程推荐 `--check`。
+
+安装器只复制技能文件，不写入 API key、账号凭据或项目业务数据，也不修改源仓库或 `skills-lock.json`。
+
 ### 2.3 不知道用哪个 skill 时
 
 直接输入：
@@ -68,55 +142,14 @@ npx skills add sooogooo/binlee-skill-july-2026 --global --yes
 
 它会先给一个默认入口和提示词，不会把你卡在“请先选择角色、平台、格式”的确认流程里。只有安全边界、法律辖区或关键事实缺失会改变结果时，专业 skill 才会追问。
 
-### 2.2 需要精确控制时使用仓库安装器
-
-如果你要明确指定 Codex、Claude Code、Gemini CLI 或 OpenCode，以及用户级还是项目级目录，可以先克隆仓库，再运行：
-
-```bash
-git clone https://github.com/sooogooo/binlee-skill-july-2026.git
-cd binlee-skill-july-2026
-
-node scripts/install-binlee.mjs --cli codex --scope user
-node scripts/install-binlee.mjs --cli claude --scope user
-node scripts/install-binlee.mjs --cli gemini --scope user
-node scripts/install-binlee.mjs --cli opencode --scope user
-```
-
-项目级安装适合把 skill 和项目代码一起提交：
-
-```bash
-node scripts/install-binlee.mjs --cli claude --scope project
-```
-
-安装前预览目标目录：
-
-```bash
-node scripts/install-binlee.mjs --cli codex --scope user --dry-run
-```
-
-只安装一个 skill：
-
-```bash
-node scripts/install-binlee.mjs \
-  --cli codex \
-  --scope project \
-  --skill binlee-consumer-decision
-```
-
-仓库安装器维护明确的依赖映射。选择 `binlee-med-aesthetics-strategy`、`binlee-clinic-operations`、`binlee-doctor-ip`、`binlee-compliance-risk`、`binlee-consumer-decision` 或 `binlee-public-communication` 时，它会先安装 `binlee-source-library`，再安装所选 skill。选择 `binlee-help` 或 `binlee-source-library` 时仍只安装一个；不传 `--skill` 时仍安装全部八个。
-
-为选择性安装加入 `--dry-run` 可以预览所选 skill 和自动补齐的依赖，目标目录不会被创建或修改。
-
-安装器只复制技能文件，不写入 API key、账号凭据或项目业务数据。它会覆盖目标目录中的同名旧副本；如果你需要保留本地改动，请先备份。
-
 ## 3. 不同 CLI 怎么调用
 
-| CLI | 用户级目录 | 项目级目录 | 常见调用方式 |
-| --- | --- | --- | --- |
-| Codex CLI | `~/.agents/skills/` | `.agents/skills/` | `$binlee-consumer-decision`，或直接描述任务 |
-| Claude Code | `~/.claude/skills/` | `.claude/skills/` | `/binlee-consumer-decision` |
-| Gemini CLI | `~/.gemini/skills/` | `.gemini/skills/` | `/skills list` 后按描述调用 |
-| OpenCode | `~/.config/opencode/skills/` | `.opencode/skills/` | 由 `skill` 工具按描述调用 |
+| CLI         | 用户级目录                   | 项目级目录          | 常见调用方式                                |
+| ----------- | ---------------------------- | ------------------- | ------------------------------------------- |
+| Codex CLI   | `~/.agents/skills/`          | `.agents/skills/`   | `$binlee-consumer-decision`，或直接描述任务 |
+| Claude Code | `~/.claude/skills/`          | `.claude/skills/`   | `/binlee-consumer-decision`                 |
+| Gemini CLI  | `~/.gemini/skills/`          | `.gemini/skills/`   | `/skills list` 后按描述调用                 |
+| OpenCode    | `~/.config/opencode/skills/` | `.opencode/skills/` | 由 `skill` 工具按描述调用                   |
 
 如果 CLI 没有自动触发，直接在问题中写出 skill 名称。显式调用比等待自动识别更稳：
 
