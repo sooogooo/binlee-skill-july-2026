@@ -4,6 +4,9 @@
 
 这不是“让 AI 多背一点医美术语”。它的重点是：让 AI 在面对医美问题时，知道该查什么、如何区分文章观点与当前事实、如何把不确定性讲清楚，以及什么时候不应该给出个体化结论。
 
+> **Web 索引版**：本仓库已通过 GitHub Pages 发布，供搜索引擎和 AI 爬虫完整抓取全部 skill、文档与适配器内容。
+> 入口地址：https://sooogooo.github.io/binlee-skill-july-2026/ ｜ [完整内容索引](SKILLS_INDEX.md)
+
 ## 快速开始
 
 ### 推荐：用 skills CLI 安装

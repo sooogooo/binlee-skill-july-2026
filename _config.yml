@@ -1,0 +1,38 @@
+# Jekyll configuration for GitHub Pages
+# https://sooogooo.github.io/binlee-skill-july-2026/
+
+title: "Binlee Skills · 医美信任闭环"
+description: "一套面向医美机构经营者、医生、监管研究者与普通消费者的 Agent Skills 知识系统。"
+url: "https://sooogooo.github.io"
+baseurl: "/binlee-skill-july-2026"
+
+# Exclude large / non-page files from Jekyll processing to speed up builds
+exclude:
+  - "skills/binlee-source-library/references/articles.json"
+  - "skills/binlee-source-library/references/article-index.jsonl"
+  - "scripts/"
+  - "tests/"
+  - "package.json"
+  - "package-lock.json"
+  - "node_modules/"
+  - "Gemfile"
+  - "Gemfile.lock"
+
+# Markdown processor settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Default layout for Markdown pages
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+
+# Force Jekyll to render files that may be excluded by default
+include:
+  - docs/CONTRIBUTING.md
