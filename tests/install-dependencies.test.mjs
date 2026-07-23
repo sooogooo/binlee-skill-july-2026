@@ -151,3 +151,36 @@ test("repeated dependent installation is idempotent", async (context) => {
     [sourceLibrary, "binlee-consumer-decision"].sort(),
   );
 });
+
+test("safe apply restores a missing installed dependency", async (context) => {
+  // Given a managed business skill whose installed source library was removed
+  const projectDirectory = await createProjectDirectory(context, "binlee-missing-installed-dependency-test-");
+  const argumentsList = [
+    installer,
+    "--cli",
+    "codex",
+    "--scope",
+    "project",
+    "--skill",
+    "binlee-consumer-decision",
+  ];
+  await runNode(argumentsList, { cwd: projectDirectory });
+  await rm(join(projectDirectory, ".agents", "skills", sourceLibrary), { recursive: true, force: true });
+
+  // When check and safe apply evaluate the incomplete dependency closure
+  await assert.rejects(
+    runNode([...argumentsList, "--check", "--json"], { cwd: projectDirectory }),
+    (error) => {
+      assert.equal(error.code, 2);
+      const result = JSON.parse(error.stdout);
+      assert.equal(result.skills.find((skill) => skill.name === sourceLibrary).status, "missing");
+      assert.equal(result.skills.find((skill) => skill.name === "binlee-consumer-decision").status, "current");
+      return true;
+    },
+  );
+  await runNode(argumentsList, { cwd: projectDirectory });
+
+  // Then only the missing dependency needs repair and the closure is complete again
+  await access(join(projectDirectory, ".agents", "skills", sourceLibrary, "SKILL.md"));
+  await access(join(projectDirectory, ".agents", "skills", "binlee-consumer-decision", "SKILL.md"));
+});

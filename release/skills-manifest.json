@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "releaseVersion": "1.1.0",
+  "repository": "https://github.com/sooogooo/binlee-skill-july-2026",
+  "skills": [
+    {
+      "name": "binlee-clinic-operations",
+      "fileCount": 2,
+      "files": {
+        "agents/openai.yaml": {
+          "kind": "text",
+          "sha256": "f30668d9665ee824ce750c3d0c90e40f97599177628a7b52d654be4269aa2fcf"
+        },
+        "SKILL.md": {
+          "kind": "text",
+          "sha256": "d457cdf46e2cb279c670d5fed3b97c70d0344efab1bc55ac5716bf66ea2c55e1"
+        }
+      }
+    },
+    {
+      "name": "binlee-compliance-risk",
+      "fileCount": 2,
+      "files": {
+        "agents/openai.yaml": {
+          "kind": "text",
+          "sha256": "5b9ad7d0207a88ef5761f9753d77adafd19a5e19cc6d4733a60801c1fc59cc43"
+        },
+        "SKILL.md": {
+          "kind": "text",
+          "sha256": "3d71a6f054c21aa6af5a87c77360b1de5842624296210f9977f4f227747c6b77"
+        }
+      }
+    },
+    {
+      "name": "binlee-consumer-decision",
+      "fileCount": 2,
+      "files": {
+        "agents/openai.yaml": {
+          "kind": "text",
+          "sha256": "17474759bce0987cc703bb946746c7ac197faedb06d66bfa10fa643652c540e9"
+        },
+        "SKILL.md": {
+          "kind": "text",
+          "sha256": "3852c6b0f9b963a68f950079be7d1bbc9e75f366481ebdb43792dcf776b92081"
+        }
+      }
+    },
+    {
+      "name": "binlee-doctor-ip",
+      "fileCount": 2,
+      "files": {
+        "agents/openai.yaml": {
+          "kind": "text",
+          "sha256": "d3b3df767bedbc73c81cf040002561b1f426f5cebd0142414df2983b53017d48"
+        },
+        "SKILL.md": {
+          "kind": "text",
+          "sha256": "08bca58a69f3ee0841cd1c41d21f4d4e6e2bdb4cdf9d14b3e971b001f5986519"
+        }
+      }
+    },
+    {
+      "name": "binlee-help",
+      "fileCount": 2,
+      "files": {
+        "agents/openai.yaml": {
+          "kind": "text",
+          "sha256": "3d58fe1459eb99b88021c4cc8b79734e7290563c42a3048670f0d6ad24ca72c2"
+        },
+        "SKILL.md": {
+          "kind": "text",
+          "sha256": "53de4223b10f5faf2cb091577cb9ef203048ca50d2876fb1198a6e4d208cd302"
+        }
+      }
+    },
+    {
+      "name": "binlee-med-aesthetics-strategy",
+      "fileCount": 2,
+      "files": {
+        "agents/openai.yaml": {
+          "kind": "text",
+          "sha256": "8ca77d24276d184badaf2c2aff4a47064a3af790aac779fb4bba450164d59dfb"
+        },
+        "SKILL.md": {
+          "kind": "text",
+          "sha256": "fa01152002f6aeb352432560d93b7cc0a2943f43385a4ad09018ed8591b6b6d8"
+        }
+      }
+    },
+    {
+      "name": "binlee-public-communication",
+      "fileCount": 2,
+      "files": {
+        "agents/openai.yaml": {
+          "kind": "text",
+          "sha256": "1ab5c4d1d083b10259dd135fa46c9937f9deca0b78e1525dc16e8f9c3ddd3295"
+        },
+        "SKILL.md": {
+          "kind": "text",
+          "sha256": "3045a0ef3cd707e2f2a9660285391aa50646bf8eb918b12378feca60e3c2183c"
+        }
+      }
+    },
+    {
+      "name": "binlee-source-library",
+      "fileCount": 18,
+      "files": {
+        "agents/openai.yaml": {
+          "kind": "text",
+          "sha256": "d69591b44006378501e60078f130b6f6ad9d1740e845078e9ef8832cc394815f"
+        },
+        "references/article-index.jsonl": {
+          "kind": "text",
+          "sha256": "33724bd21e65b2410de97cf1366e009e1b8238efc569bf6b1f436338d31d2c7e"
+        },
+        "references/articles.json": {
+          "kind": "text",
+          "sha256": "88b379e60d66e3a4fe132845c04bdcae34e44eef28c5380ec0620aa929f3757d"
+        },
+        "references/corpus-guide.md": {
+          "kind": "text",
+          "sha256": "765b1f413cbb0cdf9806f54b370e2db8ea80ffbdfee67043937af10de1a8a392"
+        },
+        "references/evidence-policy.md": {
+          "kind": "text",
+          "sha256": "af19d86dc3d63bad928f4b90ae803af9e9395da65ae8d2aa628d48640ebee5f7"
+        },
+        "references/manifest.json": {
+          "kind": "text",
+          "sha256": "03ff1ffe064c481e41703006cff78de481c135dfba1fa8cca7a810ea14db1ae6"
+        },
+        "references/theme-map.md": {
+          "kind": "text",
+          "sha256": "6f8413f350b62ec16b817302d3932c871fb33493fefe4a01ec40284774c4bb75"
+        },
+        "scripts/corpus-artifacts.mjs": {
+          "kind": "text",
+          "sha256": "d29ead15e070f9e119e6769db29c46727dfe676bd35089293a687f3ecae812be"
+        },
+        "scripts/corpus-bundle.mjs": {
+          "kind": "text",
+          "sha256": "c151b984ef13edbfed9d5dd8d7419b196ada2837101c3882a7fa91360b434db5"
+        },
+        "scripts/corpus-search.mjs": {
+          "kind": "text",
+          "sha256": "d8eeb7a63f70ab4308e1a2a43d62c55c448939c15be716280c2854dc86ed5fe9"
+        },
+        "scripts/corpus-source.mjs": {
+          "kind": "text",
+          "sha256": "e57d5b573cff7fdd3beff553c791bdcf84321e0d05ba0a300cd63bc0628f95b3"
+        },
+        "scripts/corpus-transaction.mjs": {
+          "kind": "text",
+          "sha256": "a40f1ddf9d4aa2f5983460a0e451a8b888a4620839a6285b3d98eb172b747488"
+        },
+        "scripts/extract-corpus.mjs": {
+          "kind": "text",
+          "sha256": "fb4f13ac77f32e4071e782e71787ca2ab690639b5a5208b22c87855280b27948"
+        },
+        "scripts/normalize-corpus.mjs": {
+          "kind": "text",
+          "sha256": "ed2174913af1fda44c81f5a06cdbb7da970bc35b94dbe31558a3e98feefc9498"
+        },
+        "scripts/refresh-corpus.mjs": {
+          "kind": "text",
+          "sha256": "ee043db40bf5ba9cb0f33c90585eb909b986be07369022be8c24209fc968ad95"
+        },
+        "scripts/refresh-corpus.sh": {
+          "kind": "text",
+          "sha256": "a2ef59db5fbee376ac7bbf2859f319dcb8f8bf433655ea5576297446f20623ef"
+        },
+        "scripts/search-corpus.mjs": {
+          "kind": "text",
+          "sha256": "1342eb7f80d5b93f78c5687375daa09211a41eeb37ba171a1453b8f871f33939"
+        },
+        "SKILL.md": {
+          "kind": "text",
+          "sha256": "8fb2766397ad6532f016c70cc14fa820e09f5b346732d9ad8ebbd6a94b3dac04"
+        }
+      }
+    }
+  ],
+  "digest": "e9387a2f42c408948499a8ad17c94ce22612f8032136f87a462c8ea5d24e338b"
+}
